@@ -1,0 +1,33 @@
+{
+  "name": "xproxy",
+  "version": "1.0.0",
+  "description": "网络代理",
+  "main": "index.js",
+  "bin": {
+    "xp": "./bin/xp"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node --inspect src/main.ts",
+    "build": "tsc -d",
+    "dev": "tsnd --respawn core/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jsnows/xproxy.git"
+  },
+  "author": "Jsnows",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jsnows/xproxy/issues"
+  },
+  "homepage": "https://github.com/Jsnows/xproxy#readme",
+  "dependencies": {
+    "commander": "^6.2.1"
+  },
+  "devDependencies": {
+    "ts-node": "^9.1.1",
+    "ts-node-dev": "^1.1.1",
+    "typescript": "^4.1.3"
+  }
+}

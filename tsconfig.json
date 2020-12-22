@@ -1,0 +1,21 @@
+{
+  "compileOnSave": false,
+  "buildOnSave": false,
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+  "include": [
+    "./src/**/*.ts"
+  ],
+  "exclude": ["node_modules", "dist"]
+}
