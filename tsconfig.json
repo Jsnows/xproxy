@@ -10,7 +10,7 @@
     "noImplicitAny": false,
     "importHelpers": true,
     "skipLibCheck": true,
-    "noUnusedLocals": true,
+    "noUnusedLocals": false,
     "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
   },
