@@ -2,6 +2,10 @@
   "compileOnSave": false,
   "buildOnSave": false,
   "compilerOptions": {
+    "target": "ES2018",
+    "strict": true,
+    "declaration": true,
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "rootDir": "./src",
     "outDir": "./dist",
@@ -11,11 +15,14 @@
     "importHelpers": true,
     "skipLibCheck": true,
     "noUnusedLocals": false,
+    "noEmitHelpers": true,
     "suppressImplicitAnyIndexErrors": true,
     "forceConsistentCasingInFileNames": true,
+    "lib": ["ES2015"]
   },
   "include": [
-    "./src/**/*.ts"
+    "./src/**/*.ts",
+    "./types/"
   ],
   "exclude": ["node_modules", "dist"]
 }

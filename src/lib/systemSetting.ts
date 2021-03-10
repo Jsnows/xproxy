@@ -2,6 +2,8 @@
 
 const child_process = require('child_process');
 const networkTypes: Array <String> = ['Ethernet' , 'Thunderbolt Ethernet', 'Wi-Fi'];
+const logger = require('./log');
+
 let currentNetworkType: String;
 
 function _execSync(cmd) {
@@ -61,6 +63,7 @@ const setGlobalProxy = function (ip: String, port: Number, proxyType: String): a
   } else {
     proxyType = proxyType || 'http';
     const networkType: any = currentNetworkType || getNetworkType();
+    logger.info(`set system proxy ip: ${ip} prot: ${port} proxyType: ${proxyType}`);
     return /^http$/i.test(<any>proxyType) ?
       // set http proxy
       _execSync(
@@ -81,6 +84,7 @@ const setGlobalProxy = function (ip: String, port: Number, proxyType: String): a
 const cancelGlobalProxy = function(proxyType): any {
   proxyType = proxyType || 'http';
   const networkType: any = currentNetworkType || getNetworkType();
+  logger.info('close system proxy');
   return /^http$/i.test(proxyType) ?
     // set http proxy
     _execSync(
@@ -104,3 +108,4 @@ module.exports.macSystem = {
   cancelGlobalProxy,
   getProxyState
 };
+export {};

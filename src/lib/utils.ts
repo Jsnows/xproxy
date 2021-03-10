@@ -43,14 +43,14 @@ const freshRequire = function (modulePath: string): NodeRequire {
 * @param Date或者时间戳
 * @param  YYYYMMDDHHmmss
 */
-const formatDate = function (date: String | Number | Date, formatter: String) {
+const formatDate = function (date, formatter: String) {
   if (typeof date !== 'object') {
     date = new Date(date);
   }
-  const transform = function (value) {
-    return value < 10 ? '0' + value : value;
+  const transform = function (value): string {
+    return value < 10 ? '0' + value : value.toString();
   };
-  return formatter.replace(/^YYYY|MM|DD|hh|mm|ss/g, (match) => {
+  return formatter.replace(/^YYYY|MM|DD|hh|mm|ss/g, (match): string => {
     switch (match) {
       case 'YYYY':
         return transform(date.getFullYear());

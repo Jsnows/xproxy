@@ -1,10 +1,12 @@
-const { macSystem } = require('../lib/systemSetting');
+const systemSetting = require('../lib/systemSetting');
+const logger = require('../lib/log');
+
 module.exports = function (): void {
   process.on('exit', code => {
-    macSystem.setGlobalProxy('127.0.0.1', 8001, 'http');
+    systemSetting.macSystem.cancelGlobalProxy();
   });
   process.on('SIGINT', function () {
-    macSystem.setGlobalProxy();
+    systemSetting.macSystem.cancelGlobalProxy();
     process.exit();
   });
   process.on('unhandledRejection', err => {
@@ -14,3 +16,4 @@ module.exports = function (): void {
 
   });
 }
+export {};
